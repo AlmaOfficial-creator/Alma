@@ -1,0 +1,77 @@
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:versionCode="10500"
+	android:versionName="1.5.0"
+	android:hardwareAccelerated="true"
+	android:compileSdkVersion="35"
+	android:compileSdkVersionCodename="15"
+	package="com.alma.texttool"
+	platformBuildVersionCode="35"
+	platformBuildVersionName="15">
+	<application
+		android:label="(reference) @0x7f0d001d"
+		android:icon="(reference) @0x7f0c0000"
+		android:hardwareAccelerated="true"
+		android:supportsRtl="true"
+		android:extractNativeLibs="false"
+		android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+		<provider
+			android:name="androidx.startup.InitializationProvider"
+			android:exported="false"
+			android:authorities="com.alma.texttool.androidx-startup">
+			<meta-data
+				android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+				android:value="androidx.startup"/>
+			<meta-data
+				android:name="androidx.emoji2.text.EmojiCompatInitializer"
+				android:value="androidx.startup"/>
+		</provider>
+		<provider
+			android:name="androidx.core.content.FileProvider"
+			android:exported="false"
+			android:authorities="com.alma.texttool.cdv.core.file.provider"
+			android:grantUriPermissions="true">
+			<meta-data
+				android:name="android.support.FILE_PROVIDER_PATHS"
+				android:resource="(reference) @0x7f100000"/>
+		</provider>
+		<activity
+			android:theme="(reference) @0x7f0e00fb"
+			android:label="(reference) @0x7f0d001b"
+			android:name="com.alma.texttool.MainActivity"
+			android:exported="true"
+			android:launchMode="1"
+			android:screenOrientation="1"
+			android:configChanges="fb4"
+			android:windowSoftInputMode="10">
+			<intent-filter
+				android:label="(reference) @0x7f0d001e">
+				<category
+					android:name="android.intent.category.LAUNCHER"/>
+				<action
+					android:name="android.intent.action.MAIN"/>
+			</intent-filter>
+		</activity>
+	</application>
+	<uses-permission
+		android:name="com.alma.texttool.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+	<permission
+		android:name="com.alma.texttool.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+		android:protectionLevel="2"/>
+	<queries>
+		<intent>
+			<action
+				android:name="android.media.action.IMAGE_CAPTURE"/>
+		</intent>
+	</queries>
+	<supports-screens
+		android:anyDensity="true"
+		android:smallScreens="true"
+		android:normalScreens="true"
+		android:largeScreens="true"
+		android:resizeable="true"
+		android:xlargeScreens="true"/>
+	<uses-sdk
+		android:minSdkVersion="24"
+		android:targetSdkVersion="35"/>
+</manifest>
